@@ -1,0 +1,13 @@
+        News:
+This is a test news
+New York
+
+---
+Private Ad:
+Sell your old bike
+2023-12-31
+
+---
+Motivational Quote:
+Believe in yourself
+John Doe
