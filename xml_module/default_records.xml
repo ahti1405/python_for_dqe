@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<records>
+  <record type="news">
+    <text>Breaking news: Python becomes the most popular programming language.</text>
+    <city>San Francisco</city>
+  </record>
+  <record type="ad">
+    <text>Selling a vintage bicycle in excellent condition.</text>
+    <expiration_date>2025-05-31</expiration_date>
+  </record>
+  <record type="quote">
+    <text>The best way to predict the future is to invent it.</text>
+    <author>Alan Kay</author>
+  </record>
+</records>
