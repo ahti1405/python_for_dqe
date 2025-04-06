@@ -1,0 +1,12 @@
+{
+  "1": {
+    "publication_type": "ads",
+    "text": "some ad text",
+    "date": "2025-05-23"
+  },
+   "2": {
+    "publication_type": "news",
+    "text": "some great news",
+    "city": "Bishkek"
+  }
+}
