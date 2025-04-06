@@ -451,39 +451,6 @@ class XmlProcessor(BaseNormalizer):
             print(f"An error occurred while processing the XML file: {e}")
             return False
 
-    @staticmethod
-    def create_default_xml():
-        """Creates a default XML file with sample records."""
-        root = ET.Element("records")
-
-        # Add a news record
-        news_record = ET.SubElement(root, "record", type="news")
-        news_text = ET.SubElement(news_record, "text")
-        news_text.text = "Breaking news: Python becomes the most popular programming language."
-        news_city = ET.SubElement(news_record, "city")
-        news_city.text = "San Francisco"
-
-        # Add an ad record
-        ad_record = ET.SubElement(root, "record", type="ad")
-        ad_text = ET.SubElement(ad_record, "text")
-        ad_text.text = "Selling a vintage bicycle in excellent condition."
-        ad_date = ET.SubElement(ad_record, "expiration_date")
-        # Set expiration date to 30 days from now
-        future_date = datetime.datetime.now() + datetime.timedelta(days=30)
-        ad_date.text = future_date.strftime("%Y-%m-%d")
-
-        # Add a quote record
-        quote_record = ET.SubElement(root, "record", type="quote")
-        quote_text = ET.SubElement(quote_record, "text")
-        quote_text.text = "The best way to predict the future is to invent it."
-        quote_author = ET.SubElement(quote_record, "author")
-        quote_author.text = "Alan Kay"
-
-        # Create the XML file
-        tree = ET.ElementTree(root)
-        tree.write(XmlProcessor.DEFAULT_INPUT_FILE, encoding="utf-8", xml_declaration=True)
-        print(f"Default XML file '{XmlProcessor.DEFAULT_INPUT_FILE}' created successfully.")
-
 
 class DatabaseViewer:
     """Class to view records stored in the database."""
@@ -555,9 +522,8 @@ if __name__ == "__main__":
         print("2 - Process records from a text file")
         print("3 - Process records from a JSON file")
         print("4 - Process records from an XML file")
-        print("5 - Create default XML file")
-        print("6 - View database records")
-        print("7 - Exit")
+        print("5 - View database records")
+        print("6 - Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -602,9 +568,6 @@ if __name__ == "__main__":
             processor.process_file()
 
         elif choice == "5":
-            XmlProcessor.create_default_xml()
-
-        elif choice == "6":
             viewer = DatabaseViewer()
             print("\nChoose what to view:")
             print("1 - News records")
@@ -628,7 +591,7 @@ if __name__ == "__main__":
 
             viewer.close()
 
-        elif choice == "7":
+        elif choice == "6":
             print("Exiting program. Goodbye!")
             break
 
